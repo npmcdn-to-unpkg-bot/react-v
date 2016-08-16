@@ -1,0 +1,31 @@
+.ComponentLink {
+  background: none;
+  border: none;
+  padding: .75em;
+  color: #bdbdbd;
+  cursor: pointer;
+  font-size: .8rem;
+  text-transform: uppercase;
+  transition: .2s all;
+}
+.ComponentLink:hover {
+  color: #fff;
+}
+.ComponentLink:focus {
+  outline: none;
+  background: rgba(255,255,255,.08);
+}
+.ActiveComponentLink {
+  color: #fff;
+}
+.DisabledComponentLink {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@media (max-width: 500px) {
+  .ComponentLink {
+    padding: .7em;
+    font-size: .7rem;
+  }
+}
