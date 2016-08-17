@@ -4,10 +4,15 @@ import _calculateSizeAndPositionData from './utils/calculateSizeAndPositionData'
 import getUpdatedOffsetForIndex from '../utils/getUpdatedOffsetForIndex';
 import shallowCompare from 'react-addons-shallow-compare';
 
+
+var cellMetadataCache = [];
+var renderedCellCache = [];
+
 /**
  * Renders scattered or non-linear data.
  * Unlike Grid, which renders checkerboard data, Collection can render arbitrarily positioned- even overlapping- data.
  */
+
 var Collection = function (_Component) {
   babelHelpers.inherits(Collection, _Component);
 
@@ -27,6 +32,8 @@ var Collection = function (_Component) {
   babelHelpers.createClass(Collection, [{
     key: 'recomputeCellSizesAndPositions',
     value: function recomputeCellSizesAndPositions() {
+      cellMetadataCache = [];
+      renderedCellCache = [];
       this._collectionView.recomputeCellSizesAndPositions();
     }
 
@@ -215,9 +222,6 @@ Collection.defaultProps = {
 };
 export default Collection;
 
-
-var cellMetadataCache = [];
-var renderedCellCache = [];
 
 function defaultCellGroupRenderer(_ref5) {
   var cellRenderer = _ref5.cellRenderer;

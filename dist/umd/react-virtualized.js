@@ -903,7 +903,7 @@
                 return protoProps && defineProperties(Constructor.prototype, protoProps), staticProps && defineProperties(Constructor, staticProps), 
                 Constructor;
             };
-        }(), _react = __webpack_require__(3), _react2 = _interopRequireDefault(_react), _CollectionView = __webpack_require__(14), _CollectionView2 = _interopRequireDefault(_CollectionView), _calculateSizeAndPositionData2 = __webpack_require__(22), _calculateSizeAndPositionData3 = _interopRequireDefault(_calculateSizeAndPositionData2), _getUpdatedOffsetForIndex = __webpack_require__(25), _getUpdatedOffsetForIndex2 = _interopRequireDefault(_getUpdatedOffsetForIndex), _reactAddonsShallowCompare = __webpack_require__(4), _reactAddonsShallowCompare2 = _interopRequireDefault(_reactAddonsShallowCompare), Collection = function(_Component) {
+        }(), _react = __webpack_require__(3), _react2 = _interopRequireDefault(_react), _CollectionView = __webpack_require__(14), _CollectionView2 = _interopRequireDefault(_CollectionView), _calculateSizeAndPositionData2 = __webpack_require__(22), _calculateSizeAndPositionData3 = _interopRequireDefault(_calculateSizeAndPositionData2), _getUpdatedOffsetForIndex = __webpack_require__(25), _getUpdatedOffsetForIndex2 = _interopRequireDefault(_getUpdatedOffsetForIndex), _reactAddonsShallowCompare = __webpack_require__(4), _reactAddonsShallowCompare2 = _interopRequireDefault(_reactAddonsShallowCompare), cellMetadataCache = [], renderedCellCache = [], Collection = function(_Component) {
             function Collection(props, context) {
                 _classCallCheck(this, Collection);
                 var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Collection).call(this, props, context));
@@ -912,7 +912,7 @@
             return _inherits(Collection, _Component), _createClass(Collection, [ {
                 key: "recomputeCellSizesAndPositions",
                 value: function() {
-                    this._collectionView.recomputeCellSizesAndPositions();
+                    cellMetadataCache = [], renderedCellCache = [], this._collectionView.recomputeCellSizesAndPositions();
                 }
             }, {
                 key: "render",
@@ -1016,7 +1016,6 @@
             "aria-label": "grid",
             cellGroupRenderer: defaultCellGroupRenderer
         }, exports["default"] = Collection;
-        var cellMetadataCache = [], renderedCellCache = [];
     }, /* 14 */
     /***/
     function(module, exports, __webpack_require__) {

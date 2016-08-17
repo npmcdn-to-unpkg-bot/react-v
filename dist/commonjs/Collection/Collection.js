@@ -38,10 +38,14 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var cellMetadataCache = [];
+var renderedCellCache = [];
+
 /**
  * Renders scattered or non-linear data.
  * Unlike Grid, which renders checkerboard data, Collection can render arbitrarily positioned- even overlapping- data.
  */
+
 var Collection = function (_Component) {
   _inherits(Collection, _Component);
 
@@ -61,6 +65,8 @@ var Collection = function (_Component) {
   _createClass(Collection, [{
     key: 'recomputeCellSizesAndPositions',
     value: function recomputeCellSizesAndPositions() {
+      cellMetadataCache = [];
+      renderedCellCache = [];
       this._collectionView.recomputeCellSizesAndPositions();
     }
 
@@ -249,9 +255,6 @@ Collection.defaultProps = {
 };
 exports.default = Collection;
 
-
-var cellMetadataCache = [];
-var renderedCellCache = [];
 
 function defaultCellGroupRenderer(_ref5) {
   var cellRenderer = _ref5.cellRenderer;
