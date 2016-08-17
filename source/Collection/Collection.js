@@ -207,8 +207,7 @@ function defaultCellGroupRenderer ({
         if (index in renderedCellCache) {
           renderedCell = renderedCellCache[index]
           cellMetadata = cellMetadataCache[index]
-        }
-        else {
+        } else {
           cellMetadataCache[index] = cellSizeAndPositionGetter({ index })
           renderedCellCache[index] = cellRenderer({
             index,

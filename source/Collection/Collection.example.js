@@ -133,7 +133,7 @@ export default class CollectionExample extends Component {
   _cellRenderer ({ index, isScrolling }) {
     const { list } = this.props
     const { showScrollingPlaceholder } = this.state
-    console.log('renderrrrr');
+
     const datum = list.get(index % list.size)
 
     return (
@@ -148,7 +148,7 @@ export default class CollectionExample extends Component {
     )
   }
 
-  _cellSizeAndPositionGetter ({ index, isScrolling }) {
+  _cellSizeAndPositionGetter ({ index }) {
     const { list } = this.props
     const { columnCount } = this.state
 
